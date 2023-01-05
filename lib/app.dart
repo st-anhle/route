@@ -1,8 +1,9 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:go_route/screens/Profile.dart';
-import 'package:go_route/screens/home.dart';
+import 'package:go_route/screens/category.dart';
 import 'package:go_route/screens/shopping_cart.dart';
+import 'package:go_router/go_router.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
