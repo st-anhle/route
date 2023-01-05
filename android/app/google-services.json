@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "167134224141",
+    "project_id": "routes-49d43",
+    "storage_bucket": "routes-49d43.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:167134224141:android:d5cb7147ba0304daab5a44",
+        "android_client_info": {
+          "package_name": "com.example.go_route"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "167134224141-l4ljfhhbtbhl6aod3tv7a35e8l9k0p1s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAppa-Hv5ZsCrgh-hu6O07PKsXHbHnpAxU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "167134224141-l4ljfhhbtbhl6aod3tv7a35e8l9k0p1s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
