@@ -12,6 +12,7 @@ class ScreenPaths {
   static String home = "home";
   static String card = "shoppingCard";
   static String profile = "profile";
+
   static String category(String category) => 'category/$category';
 }
 

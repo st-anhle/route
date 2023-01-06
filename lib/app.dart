@@ -1,4 +1,5 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
+import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/material.dart';
 import 'package:go_route/screens/Profile.dart';
 import 'package:go_route/screens/category.dart';
@@ -13,8 +14,26 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  int selectedpage = 0;
+  int selectedPage = 0;
   final _listPage = [HomePage(), const ShoppingCard(), const Profile()];
+
+  @override
+  void initState() {
+    super.initState();
+    initLink();
+  }
+
+  initLink() async {
+    // Get any initial links
+    final PendingDynamicLinkData? initialLink =
+        await FirebaseDynamicLinks.instance.getInitialLink();
+    if (initialLink != null) {
+      context.pushNamed('category', params: {'category': 'Watch'});
+    }
+    FirebaseDynamicLinks.instance.onLink.listen((dynamicLinkData) {
+      context.pushNamed('category', params: {'category': 'Kitchen'});
+    }).onError((error) {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +41,7 @@ class _AppState extends State<App> {
       appBar: AppBar(
         title: const Text('Shopping App'),
       ),
-      body: _listPage[selectedpage],
+      body: _listPage[selectedPage],
       bottomNavigationBar: ConvexAppBar(
         items: const [
           TabItem(icon: Icons.home),
@@ -33,10 +52,10 @@ class _AppState extends State<App> {
             icon: Icons.people,
           ),
         ],
-        initialActiveIndex: selectedpage,
+        initialActiveIndex: selectedPage,
         onTap: (int index) {
           setState(() {
-            selectedpage = index;
+            selectedPage = index;
           });
         },
       ),
