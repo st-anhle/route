@@ -15,7 +15,8 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   int selectedPage = 0;
-  final _listPage = [HomePage(), const ShoppingCard(), const Profile()];
+  // ignore: unused_field
+  final _listPage = <Widget>[HomePage(), const ShoppingCard(), const Profile()];
 
   @override
   void initState() {
