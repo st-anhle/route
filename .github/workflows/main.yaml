@@ -11,6 +11,7 @@ on:
 
 jobs:
   build:
+    # runs-on: ubuntu-latest
     runs-on: [ 'self-hosted', 'linux', 'x64' ]
     if: github.event_name  == 'pull_request' # if only run pull request when multiple trigger workflow
 
@@ -28,7 +29,7 @@ jobs:
         run: flutter test
 
       - name: Analyze project source
-        # run: flutter analyze > flutter_analyze_report.txt
+        run: flutter analyze
 
       # - uses: ruby/setup-ruby@v1
       #   with:
